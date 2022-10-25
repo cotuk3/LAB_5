@@ -8,7 +8,6 @@ public class InteractWithPerson
 {
 	#region Fields
 
-	int _typeOfPerson;
 	string _filePath;
 	string _extension;
 
@@ -70,11 +69,6 @@ public class InteractWithPerson
 		{
 			return (false, wrongFile.Message);
 		}
-	}
-	public int TypeOfPerson
-	{
-		get => _typeOfPerson;
-		set => _typeOfPerson = value;
 	}
 
 	public List<Student> DefList
