@@ -235,7 +235,7 @@ var assemblies = [
   {
     "name": "EntityService",
     "classes": [
-      { "name": "EntityService.InteractWithPerson", "rp": "EntityService_InteractWithPerson.html", "cl": 250, "ucl": 17, "cal": 267, "tl": 389, "ct": "LineCoverage", "cbm": "-", "cb": 84, "tb": 88, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "EntityService.InteractWithPerson", "rp": "EntityService_InteractWithPerson.html", "cl": 250, "ucl": 17, "cal": 267, "tl": 377, "ct": "LineCoverage", "cbm": "-", "cb": 84, "tb": 88, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "EntityService.MyException", "rp": "EntityService_MyException.html", "cl": 3, "ucl": 3, "cal": 6, "tl": 23, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
     ]},
   {
