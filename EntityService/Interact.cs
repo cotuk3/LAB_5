@@ -158,9 +158,9 @@ public class InteractWithPerson
 		Add(list);
 		return true;
 	}
-	public bool Clear()
+	public void Clear()
 	{
-		return DataProvider.ClearFile(_filePath);
+		DataProvider.ClearFile(_filePath);
 	}
 	#endregion
 
