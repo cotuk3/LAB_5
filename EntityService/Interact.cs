@@ -88,35 +88,30 @@ public class InteractWithPerson
 	#region Write to File
 	public void Add(Student student)
 	{
-		if(ser.ContainsKey(_extension))
+		List<Student> res;
+		if(File.Exists(_filePath))
 		{
-			List<Student> res;
-			if(File.Exists(_filePath))
+			try
 			{
-				try
-				{
-					res = deser[_extension](_filePath) as List<Student>;
-				}
-				catch
-				{
-					res = new List<Student>();
-				}
-
-				if(res == null)
-				{
-					res = new List<Student>();
-				}
-
+				res = deser[_extension](_filePath) as List<Student>;
 			}
-			else
+			catch
 			{
 				res = new List<Student>();
 			}
-			res.Add(student);
-			ser[_extension](res, _filePath);
+
+			if(res == null)
+			{
+				res = new List<Student>();
+			}
+
 		}
 		else
-			throw wrongFile;
+		{
+			res = new List<Student>();
+		}
+		res.Add(student);
+		ser[_extension](res, _filePath);
 	}
 	public void Add(List<Student> list)
 	{
@@ -289,94 +284,94 @@ public class InteractWithPerson
 	public Gardener CreateGardener(string firstName, string lastName, string sex,
 		string residence, string employer)
 	{
-        Regex validName = new Regex(@"^[A-Z]+[a-z ]+$");
+		Regex validName = new Regex(@"^[A-Z]+[a-z ]+$");
 
-        string input = "";
-        bool create = true;
+		string input = "";
+		bool create = true;
 
-        if(!validName.IsMatch(firstName))
-        {
-            input += "First Name, ";
-            create = false;
-        }
+		if(!validName.IsMatch(firstName))
+		{
+			input += "First Name, ";
+			create = false;
+		}
 
-        if(!validName.IsMatch(lastName))
-        {
-            input += "Last Name, ";
-            create = false;
-        }
+		if(!validName.IsMatch(lastName))
+		{
+			input += "Last Name, ";
+			create = false;
+		}
 
-        if(!validName.IsMatch(sex))
-        {
-            input += "Sex, ";
-            create = false;
-        }
+		if(!validName.IsMatch(sex))
+		{
+			input += "Sex, ";
+			create = false;
+		}
 
-        if(!validName.IsMatch(residence))
-        {
-            input += "Residence, ";
-            create = false;
-        }
+		if(!validName.IsMatch(residence))
+		{
+			input += "Residence, ";
+			create = false;
+		}
 
-        if(!validName.IsMatch(employer))
-        {
-            input += "Employer, ";
-            create = false;
-        }
+		if(!validName.IsMatch(employer))
+		{
+			input += "Employer, ";
+			create = false;
+		}
 
-        if(create)
-        {
-            return new Gardener(firstName, lastName, sex, residence, employer);
-        }
-        else
-            throw new MyException(input);
-        
+		if(create)
+		{
+			return new Gardener(firstName, lastName, sex, residence, employer);
+		}
+		else
+			throw new MyException(input);
+
 	}
 	public Seller CreateSeller(string firstName, string lastName, string sex,
 		 string residence, string product)
 	{
-        Regex validName = new Regex(@"^[A-Z]+[a-z ]+$");
+		Regex validName = new Regex(@"^[A-Z]+[a-z ]+$");
 
-        string input = "";
-        bool create = true;
+		string input = "";
+		bool create = true;
 
-        if(!validName.IsMatch(firstName))
-        {
-            input += "First Name, ";
-            create = false;
-        }
+		if(!validName.IsMatch(firstName))
+		{
+			input += "First Name, ";
+			create = false;
+		}
 
-        if(!validName.IsMatch(lastName))
-        {
-            input += "Last Name, ";
-            create = false;
-        }
+		if(!validName.IsMatch(lastName))
+		{
+			input += "Last Name, ";
+			create = false;
+		}
 
-        if(!validName.IsMatch(sex))
-        {
-            input += "Sex, ";
-            create = false;
-        }
+		if(!validName.IsMatch(sex))
+		{
+			input += "Sex, ";
+			create = false;
+		}
 
-        if(!validName.IsMatch(residence))
-        {
-            input += "Residence, ";
-            create = false;
-        }
+		if(!validName.IsMatch(residence))
+		{
+			input += "Residence, ";
+			create = false;
+		}
 
-        if(!validName.IsMatch(product))
-        {
-            input += "Product, ";
-            create = false;
-        }
+		if(!validName.IsMatch(product))
+		{
+			input += "Product, ";
+			create = false;
+		}
 
-        if(create)
-        {
-            return new Seller(firstName, lastName, sex, residence, product);
-        }
-        else
-            throw new MyException(input);
-        
+		if(create)
+		{
+			return new Seller(firstName, lastName, sex, residence, product);
+		}
+		else
+			throw new MyException(input);
+
 	}
 	#endregion
 }
