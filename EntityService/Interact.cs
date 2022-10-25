@@ -31,9 +31,8 @@ public class InteractWithPerson
 	#endregion
 
 	#region ctorS
-	public InteractWithPerson(string filePath, int typeOfPerson = 0)
+	public InteractWithPerson(string filePath)
 	{
-		_typeOfPerson = typeOfPerson;
 		FilePath = filePath;
 	}
 	public InteractWithPerson()
