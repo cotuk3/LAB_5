@@ -9,13 +9,13 @@ public abstract class DataProvider
     }
     public abstract void Serialize(object graph, string filePath);
     public abstract object Deserialize(string filePath);
-    public static bool ClearFile(string filePath)
+    public static void ClearFile(string filePath)
     {
         if (File.Exists(filePath)) 
         { 
             File.WriteAllText(filePath, "");
-            return File.Exists(filePath);
+            return;
         }
-        return false;
+        throw new FileNotFoundException();
     }
 }

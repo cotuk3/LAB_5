@@ -262,25 +262,21 @@ public class InteractWithPersonTests
 
         //act
         iwp.FilePath = filePath;
-        bool res = iwp.Clear();
+        iwp.Clear();
         string actual = File.ReadAllText(filePath);
 
-        Debug.WriteLine(res);
         Assert.AreEqual(expected, actual);
     }
 
+    [ExpectedException(typeof(FileNotFoundException))]
     [TestMethod()]
     public void Clear_NotExistingFile_Fail()
     {
-        //arrange
-        bool expected = false;
 
         //act
         iwp.FilePath = "file21.txt";
-        bool actual = iwp.Clear();
+        iwp.Clear();
 
-
-        Assert.AreEqual(expected, actual);
     }
 
     #endregion

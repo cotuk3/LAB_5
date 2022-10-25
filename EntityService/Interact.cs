@@ -160,7 +160,14 @@ public class InteractWithPerson
 	}
 	public void Clear()
 	{
-		DataProvider.ClearFile(_filePath);
+		try
+		{
+			DataProvider.ClearFile(_filePath);
+		}
+		catch
+		{
+			throw;
+		}
 	}
 	#endregion
 
